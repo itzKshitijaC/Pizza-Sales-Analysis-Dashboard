@@ -13,5 +13,15 @@ The store wants to create an annual sales report for the year 2022. The Company 
 7. Which channel is contributing to maximum sales?
 8. What is the highest-selling category?
 
+# Cleaning and Exploratory Analysis 📌
+After data acquisition, the raw data needs to be cleaned and transformed before we can try and draw any insights from it.
+
+1. In the "Gender" column, we need to filter and replace "W" with "Women" and "M" with "Men". 
+   
+![img1](https://github.com/itzKshitijaC/Sales-Analysis-Dashboard/assets/168798073/3bb2771d-85b9-4a45-90b0-3fbc9f37bf8c)
+
+After filtering and replacing values, we get the below result - 
+
+![img2](https://github.com/itzKshitijaC/Sales-Analysis-Dashboard/assets/168798073/ef3c3b03-cbf4-47c7-9e5d-0b3924a31f47)
 
 
