@@ -92,10 +92,30 @@ We need to analyze key indicators for our pizza sales data to gain insights into
         ORDER BY Total_Pizza_Sold ASC
 
 
+# Data Cleaning 🧹
+
+1. Rename Pizza Sizes
+   
+![img1](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/c5d63197-e2fa-4965-84cb-bbafaa3a22f6)
+Replace - 
+L - Large
+
+M - Medium
+
+Small - Regular
+
+XLarge - X-Large
+
+XXLarge - XX-Large
+
+![img2](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/964bfff9-cecd-42a4-9daf-bacbae42d3a9)
 
 
+# Data Preprocessing 👩🏻‍💻
+1. Create a new column "order_day" from "order_date" column
 
+           =TEXT([@[order_date]],"dddd")
 
-
+![img3](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/6b4f6534-73f7-44d9-9599-81d51a04b07e)
 
 
