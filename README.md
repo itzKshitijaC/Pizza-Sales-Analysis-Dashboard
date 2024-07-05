@@ -118,7 +118,12 @@ XXLarge - XX-Large
 
 ![img3](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/6b4f6534-73f7-44d9-9599-81d51a04b07e)
 
-2. Create a "total orders" column
+2. Create a "total orders" column to count the total number of orders given by a particular customer
+
+           =1/COUNTIF(B:B,[@[order_id]])
+
+![img4](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/7e8a7059-9422-47d4-b128-54724b9ce099)
 
 
+3. 
 
