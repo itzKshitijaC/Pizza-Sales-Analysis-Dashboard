@@ -118,4 +118,7 @@ XXLarge - XX-Large
 
 ![img3](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/6b4f6534-73f7-44d9-9599-81d51a04b07e)
 
+2. Create a "total orders" column
+
+
 
