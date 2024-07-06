@@ -21,47 +21,69 @@ We need to analyze key indicators for our pizza sales data to gain insights into
 1. Total Revenue:
 
         SELECT SUM(total_price) AS Total_Revenue FROM pizza_sales;
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/47eea7f3-79d9-413b-9536-48dadd310237)
+
    
-2. Average Order Value
+3. Average Order Value
 
         SELECT (SUM(total_price) / COUNT(DISTINCT order_id)) AS Avg_order_Value FROM pizza_sales
 
-3. Total Pizzas Sold
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/acb3ce9a-f49c-4fe6-ae5c-0e857259e2d1)
+
+
+5. Total Pizzas Sold
 
         SELECT SUM(quantity) AS Total_pizza_sold FROM pizza_sales
 
-4. Total Orders
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/61237c30-765b-4933-9f48-94209f2ca879)
+
+
+7. Total Orders
 
         SELECT COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sales
 
-5. Average Pizzas Per Order
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/94fac5f0-9d08-4a00-8999-eb70103d6610)
+
+
+9. Average Pizzas Per Order
 
         SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / 
         CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2))
         AS Avg_Pizzas_per_order
         FROM pizza_sales
 
-6. Daily Trend for Total Orders
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/c16e3392-84fc-44e1-b1a9-d3ec4634de54)
+
+
+11. Daily Trend for Total Orders
 
         SELECT DATENAME(DW, order_date) AS order_day, COUNT(DISTINCT order_id) AS total_orders 
         FROM pizza_sales
         GROUP BY DATENAME(DW, order_date)
 
-7. Hourly Trend for Orders
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/1617c268-28b1-4da4-a1e7-4ac20c8006a7)
+
+
+13. Hourly Trend for Orders
 
         SELECT DATEPART(HOUR, order_time) as order_hours, COUNT(DISTINCT order_id) as total_orders
         from pizza_sales
         group by DATEPART(HOUR, order_time)
         order by DATEPART(HOUR, order_time)
 
-8. % of Sales by Pizza Category
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/38bfbc93-5294-48f2-8f87-b47fecb7f3d1)
+
+14. % of Sales by Pizza Category
 
         SELECT pizza_category, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
         CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sales) AS DECIMAL(10,2)) AS PCT
         FROM pizza_sales
         GROUP BY pizza_category
 
-9. % of Sales by Pizza Size
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/8c4d6881-6ea5-44a8-bb5f-f5901f6e95c5)
+
+16. % of Sales by Pizza Size
 
         SELECT pizza_size, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
         CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sales) AS DECIMAL(10,2)) AS PCT
@@ -69,7 +91,10 @@ We need to analyze key indicators for our pizza sales data to gain insights into
         GROUP BY pizza_size
         ORDER BY pizza_size
 
-10. Total Pizzas Sold by Pizza Category
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/7445676b-c0d4-4c07-9454-3e2d7394a83f)
+
+
+18. Total Pizzas Sold by Pizza Category
 
         SELECT pizza_category, SUM(quantity) as Total_Quantity_Sold
         FROM pizza_sales
@@ -77,19 +102,27 @@ We need to analyze key indicators for our pizza sales data to gain insights into
         GROUP BY pizza_category
         ORDER BY Total_Quantity_Sold DESC
 
-11. Top 5 Best Sellers by Total Pizzas Sold
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/f61c753b-36db-4932-a709-620fc4b3fa61)
+
+
+20. Top 5 Best Sellers by Total Pizzas Sold
 
         SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
         FROM pizza_sales
         GROUP BY pizza_name
         ORDER BY Total_Pizza_Sold DESC
 
-12. Bottom 5 Best Sellers by Total Pizzas Sold
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/fb63c458-5d2c-49bb-acb9-1e4ed1b51cb2)
+
+
+22. Bottom 5 Best Sellers by Total Pizzas Sold
 
         SELECT TOP 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
         FROM pizza_sales
         GROUP BY pizza_name
         ORDER BY Total_Pizza_Sold ASC
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/4a517b86-7e8a-45b9-89cb-69e330aedfb3)
 
 
 # Data Cleaning 🧹
