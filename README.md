@@ -78,6 +78,27 @@ This line chart visualization illustrates the hourly trend of daily orders. This
 
 This pie chart visualization shows the distribution of sales across different pizza categories. This chart helps to provide insights into the popularity of various pizza categories and their contribution to overall sales
 
+4. Percentage of sales by Pizza size
+   
+![v4](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/c49aad39-4dcd-44ec-8abb-f9122e94d74e)
 
+This Pie Chart represents the percentage of sales attributed to different pizza sizes. This chart helps us understand customer preferences for pizza sizes and their impact on sales.
 
+5. Total pizzas sold by Pizza category
+
+![v5](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/6ebcafaa-bcdb-4e6a-8aab-d822699ffb2b)
+
+This Pie Chart represents the percent of total number of pizzas sold for each pizza category. This chart allows us to compare the sales performance of different pizza categories.
+
+6. Top 5 best sellers by Total Pizzas sold
+   
+![v6](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/10435b62-39fc-46e3-99e7-2f3a77b028c7)
+
+A bar chart highlighting the top 5 best-selling pizzas based on the total number of pizzas sold. This chart will help us identify the most popular pizza options.
+
+7. Bottom 5 worst sellers by Total Pizza sold
+
+![v7](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/2958ef05-ea6c-47a1-a37a-43fe6b79f624)
+
+This is a bar chart showcasing the bottom 5 worst-selling pizzas based on the total number of pizzas sold. This chart enables us to identify underperforming or less popular pizzas options. 
 
