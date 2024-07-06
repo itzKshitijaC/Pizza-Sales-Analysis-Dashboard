@@ -39,6 +39,104 @@ XXLarge - XX-Large
 
 ![img4](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/7e8a7059-9422-47d4-b128-54724b9ce099)
 
+# SQL Queries 👩🏻‍💻
+1. Total Revenue:
+
+         SELECT SUM(total_price) AS Total_Revenue FROM pizza_sales;
+ 
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/a06fab95-25df-4f86-9d5a-04464237527c)
+
+2. Average Order Value
+
+         SELECT (SUM(total_price) / COUNT(DISTINCT order_id)) AS Avg_order_Value FROM pizza_sales
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/15bac363-e21a-4bbb-8cf5-24b592ad8ffc)
+
+3. . Total Pizzas Sold
+
+         SELECT SUM(quantity) AS Total_pizza_sold FROM pizza_sales
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/243b9fdf-1330-43cc-9ed5-223a83984330)
+
+4. Total Orders
+
+         SELECT COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sales
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/63994d7a-d3a4-4fde-bad0-2f2263736adc)
+
+5. Average Pizzas Per Order
+
+         SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / 
+         CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2))
+         AS Avg_Pizzas_per_order
+         FROM pizza_sales
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/ca9bfd38-5ec7-4497-a3fe-799c9cb95693)
+
+6. Daily Trend for Total Orders
+
+         SELECT DATENAME(DW, order_date) AS order_day, COUNT(DISTINCT order_id) AS total_orders 
+         FROM pizza_sales
+         GROUP BY DATENAME(DW, order_date)
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/cb90ecb1-d2db-4e66-ac9c-84251817cf08)
+
+7. Hourly Trend for Orders
+
+         SELECT DATEPART(HOUR, order_time) as order_hours, COUNT(DISTINCT order_id) as total_orders
+         from pizza_sales
+         group by DATEPART(HOUR, order_time)
+         order by DATEPART(HOUR, order_time)
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/29727b51-b6e6-4a47-b650-f0ed8c9a0210)
+
+8. % of Sales by Pizza Category
+
+         SELECT pizza_category, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
+         CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sales) AS DECIMAL(10,2)) AS PCT
+         FROM pizza_sales
+         GROUP BY pizza_category
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/81f6fcab-14e2-49de-b862-17b2fd804110)
+
+9. % of Sales by Pizza Size
+
+         SELECT pizza_size, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
+         CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sales) AS DECIMAL(10,2)) AS PCT
+         FROM pizza_sales
+         GROUP BY pizza_size
+         ORDER BY pizza_size
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/92d42be2-d7be-4022-afb9-54d8f1f32481)
+
+
+10. Total Pizzas Sold by Pizza Category
+
+         SELECT pizza_category, SUM(quantity) as Total_Quantity_Sold
+         FROM pizza_sales
+         WHERE MONTH(order_date) = 2
+         GROUP BY pizza_category
+         ORDER BY Total_Quantity_Sold DESC
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/711ce62e-b900-43ac-aaf2-823266438d4f)
+
+11. Top 5 Best Sellers by Total Pizzas Sold
+
+         SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
+         FROM pizza_sales
+         GROUP BY pizza_name
+         ORDER BY Total_Pizza_Sold DESC
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/bb751d81-f08e-49f2-a338-7bc83ef78e3d)
+
+12. Bottom 5 Best Sellers by Total Pizzas Sold
+
+         SELECT TOP 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
+         FROM pizza_sales
+         GROUP BY pizza_name
+         ORDER BY Total_Pizza_Sold ASC
+
+![image](https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/f65731d8-04dd-4c52-9115-0c019ebcffcc)
 
 # Dashboarding 📊
 
