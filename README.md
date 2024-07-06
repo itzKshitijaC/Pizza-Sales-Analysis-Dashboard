@@ -5,8 +5,7 @@
 <img src="https://github.com/itzKshitijaC/Pizza-Sales-Analysis-Dashboard/assets/168798073/0fc036bd-a722-49d4-90eb-cd223c12d206" width="800" height="400" />
 
 # The business Problem 🔍
-
-
+The Pizza shop's sales team aims to scrutinize historical sales data to extract actionable insights that will help optimize future marketing strategies, improve inventory management, and enhance customer satisfaction. This analysis seeks to identify trends, seasonal patterns, and key performance indicators, enabling the business to make data-driven decisions that boost overall profitability and operational efficiency.
 
 # Data Cleaning 🧹
 
